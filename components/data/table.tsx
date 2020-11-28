@@ -10,17 +10,19 @@ interface Props {
 const DataTable = ({ data, headers, route }: Props) => {
   return (
     <table>
-      {headers.map(header => (
-        <tr>
-          <td>{header}</td>
-        </tr>
-      ))}
-      {data.map(({ id, name }) => (
-        <tr>
-          <td>
-            <Link href={`${route}/${id}`}>{name}</Link>
-          </td>
-        </tr>
+      <tr>
+        {headers.map(header => (
+          <th>{header}</th>
+        ))}
+      </tr>
+      {data.map(record => (
+        <Link href={`${route}/${record.id}`}>
+          <tr>
+            {Object.values(record).map(item => (
+              <td>{item}</td>
+            ))}
+          </tr>
+        </Link>
       ))}
     </table>
   )
