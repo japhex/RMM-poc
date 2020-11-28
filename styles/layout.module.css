@@ -1,0 +1,17 @@
+.baseContainer {
+  padding: 10px;
+}
+
+.header {
+  height: 10vh;
+}
+
+.footer {
+  height: 10vh;
+}
+
+.navigation {
+  color: #fff;
+  width: 15vw;
+  background: #0366fc;
+}
