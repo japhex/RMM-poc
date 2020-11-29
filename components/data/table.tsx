@@ -1,5 +1,6 @@
 import { DataType } from 'types/data'
 import Link from 'next/link'
+import styles from './table.module.css'
 
 interface Props {
   data: DataType[]
@@ -17,7 +18,7 @@ const DataTable = ({ data, headers, route }: Props) => {
       </tr>
       {data.map(record => (
         <Link href={`${route}/${record.id}`}>
-          <tr>
+          <tr className={styles.tableRow}>
             {Object.values(record).map(item => (
               <td>{item}</td>
             ))}
